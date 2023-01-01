@@ -1,0 +1,20 @@
+
+server:
+  port: 8900
+
+eureka:
+  client:
+    serverUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: StockService
+
+
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 160000000
+        read-timeout: 160000000

@@ -1,0 +1,21 @@
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: productModule
+          uri: http://localhost:8090/
+          predicates:
+            - Path=/product/**
+        - id: stockModule
+          uri: http://localhost:8091/
+          predicates:
+            - Path=/stock/**
+  main:
+    web-application-type: reactive
+
+server:
+  port: 8080
+
